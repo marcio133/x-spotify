@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AuthenticationService } from './_services/authentication.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RedirectComponent } from './redirect/redirect.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { RedirectComponent } from './redirect/redirect.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
+
   ],
   providers: [
     AuthenticationService
