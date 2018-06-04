@@ -9,6 +9,8 @@ import { AuthenticationService } from './_services/authentication.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './_interceptors/auth.service';
+import { TokenService } from './_services/token.service';
 
 
 @NgModule({
@@ -25,7 +27,13 @@ import { AppRoutingModule } from './app-routing.module';
 
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+        useClass: AuthService,
+        multi: true
+    },
+    TokenService
   ],
   bootstrap: [AppComponent]
 })
