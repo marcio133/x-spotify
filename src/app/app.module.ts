@@ -17,6 +17,7 @@ import { SearchComponent } from './search/search.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SearchService } from './_services/search.service';
 import { UserService } from './_services/user.service';
+import { AlbumComponent } from './album/album.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UserService } from './_services/user.service';
     RedirectComponent,
     HomeComponent,
     SearchComponent,
-    NavBarComponent
+    NavBarComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,

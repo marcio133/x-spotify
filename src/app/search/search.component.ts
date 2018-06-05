@@ -8,7 +8,7 @@ import { SearchService } from '../_services/search.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  type: string;
+  type: string = 'artist';
   searchString: string = '';
   @Output() result = new EventEmitter<any>();
 
@@ -18,9 +18,9 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
-    this.searchService.search(this.searchString, this.type).subscribe(res => {
+    this.searchService.search(this.searchString, this.type).subscribe((res:any) => {
       console.log(res);
-      this.result.emit(res);
+      this.result.emit({results: res.albums.items, type: this.type});
     })
   }
 

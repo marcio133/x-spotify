@@ -9,4 +9,11 @@
             </div>
         </div>
     </section>
+    <section class="container-fluid">
+        <div class="row" *ngIf="type == 'album'">
+            <div class="col-md-2" *ngFor="let album of results">
+                <app-album [album]="album"></app-album>
+            </div>
+        </div>
+    </section>
 </main>
