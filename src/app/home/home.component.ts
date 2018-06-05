@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  results: any;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getResults(results) {
+    this.results = results;
+    console.log( this.results);
   }
 
 }

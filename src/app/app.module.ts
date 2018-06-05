@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import {HttpModule} from '@angular/http';
 
@@ -12,7 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './_interceptors/auth.service';
 import { TokenService } from './_services/token.service';
 import { HomeComponent } from './home/home.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SearchComponent } from './search/search.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SearchService } from './_services/search.service';
+import { UserService } from './_services/user.service';
 
 
 @NgModule({
@@ -21,13 +25,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     LoginComponent,
     RedirectComponent,
     HomeComponent,
-    SidebarComponent
+    SearchComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ],
   providers: [
@@ -37,7 +43,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
         useClass: AuthService,
         multi: true
     },
-    TokenService
+    TokenService,
+    SearchService,
+    UserService
+    
   ],
   bootstrap: [AppComponent]
 })
