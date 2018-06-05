@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html'
 })
-export class HomepageComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   constructor() { }
 

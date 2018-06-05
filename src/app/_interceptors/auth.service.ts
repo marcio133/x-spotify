@@ -21,8 +21,6 @@ export class AuthService implements HttpInterceptor {
       .catch(error => {        
         if (error instanceof HttpErrorResponse) {
           if (error.status === 401 || error.status === 403) {
-            
-
             this.router.navigate(['/nao-autenticado']);
           }
           return Observable.throw(error);
@@ -34,18 +32,12 @@ export class AuthService implements HttpInterceptor {
     let headers = {};
     if(this.tokenService.getToken()){
       headers =  {
-        'Content-Type':'application/x-www-form-urlencoded'
-        // 'Authorization': `${this.tokenService.getToken()}`,
-        // 'Access-Control-Allow-Origin': '*'
-      }
-    }else{
-      headers =  {
-        // 'Content-Type': 'application/json',
+        'Content-Type':'application/x-www-form-urlencoded',
+        'Authorization': `${this.tokenService.getToken()}`,
         // 'Access-Control-Allow-Origin': '*'
       }
     }
-    console.log("aqui");
-    
+
     return headers;
   }
 
