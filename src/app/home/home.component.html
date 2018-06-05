@@ -15,5 +15,16 @@
                 <app-album [album]="album"></app-album>
             </div>
         </div>
+
+        <div class="row" *ngIf="type == 'artist'">
+            <div class="col-md-2" *ngFor="let artist of results">
+                <app-artist [artist]="artist"></app-artist>
+            </div>
+        </div>
+        <div class="row" *ngIf="type == 'track'">
+            <div class="col-md-2" *ngFor="let track of results">
+                <app-tracks [track]="track"></app-tracks>
+            </div>
+        </div>
     </section>
 </main>

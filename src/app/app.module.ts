@@ -18,6 +18,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SearchService } from './_services/search.service';
 import { UserService } from './_services/user.service';
 import { AlbumComponent } from './album/album.component';
+import { ArtistComponent } from './artist/artist.component';
+import { TracksComponent } from './tracks/tracks.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { AlbumComponent } from './album/album.component';
     HomeComponent,
     SearchComponent,
     NavBarComponent,
-    AlbumComponent
+    AlbumComponent,
+    ArtistComponent,
+    TracksComponent
   ],
   imports: [
     BrowserModule,
