@@ -43,6 +43,7 @@ a {
 .card {
     border: none;
     border-radius: 0px;
+    margin-bottom: 15px;
     .card-img {
         width: 100%;
         padding-top: 100%;
@@ -64,5 +65,17 @@ a {
             font-size: 11px;
             color: $subtitle-gray;
         }
+        .artist-description {
+            min-height: 85px;
+            max-height: 85px;
+            overflow: hidden;
+        }
+    }
+}
+
+.badge-primary {
+    background-color: $primary-color;
+    i {
+        color: $hot-color;
     }
 }
