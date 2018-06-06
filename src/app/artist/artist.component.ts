@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ArtistModalComponent } from '../artist-modal/artist-modal.component';
 
 @Component({
   selector: 'app-artist',
@@ -7,7 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ArtistComponent implements OnInit {
   @Input() artist: any;
-  constructor() { }
+  bsModalRef: BsModalRef;
+
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
   }
@@ -22,6 +26,14 @@ export class ArtistComponent implements OnInit {
     }else{
       return 'Underground';
     }
+  }
+
+  openArtistModal() {
+    const initialState = {
+      artist: this.artist;
+    };
+    this.bsModalRef = this.modalService.show(ArtistModalComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
   }
 
 }

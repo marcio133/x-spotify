@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{artist.name}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <h6 class="text-center">Latest 5 albums</h6>
+    <div class="row">
+        <div class="col-4" *ngFor="let album of albums">
+            <app-album [album]="album"></app-album>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close</button>
+</div>

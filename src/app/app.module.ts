@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import {HttpModule} from '@angular/http';
 
@@ -20,6 +21,8 @@ import { UserService } from './_services/user.service';
 import { AlbumComponent } from './album/album.component';
 import { ArtistComponent } from './artist/artist.component';
 import { TracksComponent } from './tracks/tracks.component';
+import { ArtistModalComponent } from './artist-modal/artist-modal.component';
+import { ArtistService } from './_services/artist.service';
 
 
 @NgModule({
@@ -32,14 +35,16 @@ import { TracksComponent } from './tracks/tracks.component';
     NavBarComponent,
     AlbumComponent,
     ArtistComponent,
-    TracksComponent
+    TracksComponent,
+    ArtistModalComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
 
   ],
   providers: [
@@ -51,9 +56,11 @@ import { TracksComponent } from './tracks/tracks.component';
     },
     TokenService,
     SearchService,
-    UserService
+    UserService,
+    ArtistService
     
   ],
+  entryComponents:[ArtistModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

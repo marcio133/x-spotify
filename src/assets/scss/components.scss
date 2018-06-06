@@ -79,3 +79,24 @@ a {
         color: $hot-color;
     }
 }
+
+.modal-content {
+    border-radius: 0px;
+}
+
+.modal-header {
+    border-bottom: none;
+    .modal-title {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.modal-footer {
+    border-top: none
+}
+
+.close {
+    color: $primary-color;
+    opacity: 1;
+}
