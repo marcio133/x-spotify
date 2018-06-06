@@ -5,6 +5,9 @@
         box-shadow: none;
         border: 0px;
     }
+    &:focus {
+        box-shadow: none;
+    }
     &::-webkit-input-placeholder {
         color: $detail-gray;
     }

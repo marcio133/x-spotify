@@ -8,7 +8,7 @@ export class AuthenticationService {
    }
 
    authenticate() {
-    return this.httpClient.get('https://x-spotify.firebaseapp.com/redirect#access_token=BQAbOu50LuNM9715wMFxOFIMMAgkDf1UeJHYMGH6XzWVM99CG2b_aHlX6A74pmbCQR91_YqUcjmOvPBsOSoY2AcTNigcVImj_rie3uu8WYNS5H29EWdqpKKBKSPScA7o406gvVFsehDaENvhWvUjkg4y5SHPwjBmDx8CG4F-6foX9iy6EBo&token_type=Bearer&expires_in=3600&state=123');
+    return this.httpClient.get('https://accounts.spotify.com/authorize/?client_id=4ff13c994cf54765936ccc5c0b5559d9&response_type=code&redirect_uri=https%3A%2F%2Fx-spotify.firebaseapp.com%redirect&scope=user-read-private%20user-read-email&state=34fFs29kd09');
    }
 
 
