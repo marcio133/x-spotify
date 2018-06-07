@@ -30,7 +30,7 @@ export class ArtistComponent implements OnInit {
 
   openArtistModal() {
     const initialState = {
-      artist: this.artist;
+      artist: this.artist
     };
     this.bsModalRef = this.modalService.show(ArtistModalComponent, {initialState});
     this.bsModalRef.content.closeBtnName = 'Close';
