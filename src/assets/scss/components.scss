@@ -63,7 +63,7 @@ a {
         }
         p {
             font-size: 11px;
-            color: $subtitle-gray;
+            color: $text-gray;
         }
         .artist-description {
             min-height: 85px;
@@ -86,10 +86,15 @@ a {
 
 .modal-header {
     border-bottom: none;
+    padding: 0 16px;
     .modal-title {
         text-align: center;
         width: 100%;
     }
+}
+
+.modal-body {
+    padding-bottom: 40px;
 }
 
 .modal-footer {
@@ -101,8 +106,15 @@ a {
 }
 
 .close {
-    color: $primary-color;
     opacity: 1;
+}
+
+.close-modal {
+    color: $primary-color !important;
+    // opacity: 1;
+    &:hover {
+        color: $secondary-color !important;
+    }
 }
 
 .album-img {
@@ -129,4 +141,8 @@ a {
         -ms-flex-preferred-size: auto;
         flex-basis: auto;
     }
+}
+
+.detail {
+    color: $text-gray;
 }

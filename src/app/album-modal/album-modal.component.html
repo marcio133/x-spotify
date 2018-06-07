@@ -1,7 +1,7 @@
 <div class="modal-header">
     <!-- <h4 class="modal-title"></h4> -->
     <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
-    <span aria-hidden="true">&times;</span>
+    <span class="close-modal" aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
@@ -11,8 +11,8 @@
 
         </div>
         <div class="col-md-8">
-            <h6>{{album.name}}</h6>
-            <p *ngIf="album.artists.length == 1;else variousArtists">{{album.artists[0].name}}</p>
+            <h5>{{album.name}}</h5>
+            <p class="detail" *ngIf="album.artists.length == 1;else variousArtists">{{album.artists[0].name}}</p>
             <ng-template #variousArtists>
                 <p>Various artists</p>
             </ng-template>
@@ -23,7 +23,7 @@
                         <th>DURAÇÃO</th>
                     </tr>
                     <tr *ngFor="let track of tracks">
-                        <td>{{track.track_number}}</td>
+                        <td class="small-colum">{{track.track_number}}</td>
                         <td>{{track.name}} <span *ngIf="track.explicit" class="badge badge-primary">Explicit</span>
                         </td>
                         <td>{{track.duration_ms|date:'mm:ss'}}</td>
