@@ -96,7 +96,21 @@ a {
     border-top: none
 }
 
+.modal-dialog {
+    max-width: 80%;
+}
+
 .close {
     color: $primary-color;
     opacity: 1;
+}
+
+.album-img {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 0px;
 }

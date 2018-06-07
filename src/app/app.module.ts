@@ -23,6 +23,8 @@ import { ArtistComponent } from './artist/artist.component';
 import { TracksComponent } from './tracks/tracks.component';
 import { ArtistModalComponent } from './artist-modal/artist-modal.component';
 import { ArtistService } from './_services/artist.service';
+import { AlbumModalComponent } from './album-modal/album-modal.component';
+import { AlbumService } from './_services/album.service';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { ArtistService } from './_services/artist.service';
     AlbumComponent,
     ArtistComponent,
     TracksComponent,
-    ArtistModalComponent
+    ArtistModalComponent,
+    AlbumModalComponent
   ],
   imports: [
     BrowserModule,
@@ -57,10 +60,14 @@ import { ArtistService } from './_services/artist.service';
     TokenService,
     SearchService,
     UserService,
-    ArtistService
+    ArtistService,
+    AlbumService
     
   ],
-  entryComponents:[ArtistModalComponent],
+  entryComponents:[
+    ArtistModalComponent,
+    AlbumModalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
