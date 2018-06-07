@@ -114,3 +114,10 @@ a {
     background-position: center center;
     border-radius: 0px;
 }
+
+.loader {
+    line-height: 36px;
+    span {
+        margin-top: -10px;
+    }
+}

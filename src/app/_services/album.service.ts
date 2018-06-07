@@ -13,4 +13,9 @@ export class AlbumService {
     return this.httpClient.get(`${this.baseUrl}v1/albums/${id}/tracks`, { params: params });
   }
 
+  getNewReleases() {
+    let params = new HttpParams().set('limit', '50')
+    return this.httpClient.get(`${this.baseUrl}v1/browse/new-releases`, { params: params });
+  }
+
 }

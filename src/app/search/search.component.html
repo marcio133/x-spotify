@@ -8,7 +8,7 @@
     <div class="form-check form-check-inline">
         <div class="row">
             <div class="col-md-12 text-center">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="type" id="inlineRadio1" value="artist">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="type" (ngModelChange)="search()" id="inlineRadio1" value="artist">
                 <label class="form-check-label" for="inlineRadio1">Artists</label>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="form-check form-check-inline">
         <div class="row">
             <div class="col-md-12 text-center">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="type" id="inlineRadio2" value="album">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="type" (ngModelChange)="search()" id="inlineRadio2" value="album">
                 <label class="form-check-label" for="inlineRadio2">Albums</label>
             </div>
         </div>
@@ -24,7 +24,7 @@
     <div class="form-check form-check-inline">
         <div class="row">
             <div class="col-md-12 text-center">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="type" id="inlineRadio3" value="track">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="type" (ngModelChange)="search()" id="inlineRadio3" value="track">
                 <label class="form-check-label" for="inlineRadio3">Tracks</label>
             </div>
         </div>

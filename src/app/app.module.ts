@@ -25,6 +25,7 @@ import { ArtistModalComponent } from './artist-modal/artist-modal.component';
 import { ArtistService } from './_services/artist.service';
 import { AlbumModalComponent } from './album-modal/album-modal.component';
 import { AlbumService } from './_services/album.service';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AlbumService } from './_services/album.service';
     ArtistComponent,
     TracksComponent,
     ArtistModalComponent,
-    AlbumModalComponent
+    AlbumModalComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
