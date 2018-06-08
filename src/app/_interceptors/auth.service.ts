@@ -21,7 +21,7 @@ export class AuthService implements HttpInterceptor {
       .catch(error => {        
         if (error instanceof HttpErrorResponse) {
           if (error.status === 401 || error.status === 403) {
-            this.router.navigate(['/nao-autenticado']);
+            this.router.navigate(['']);
           }
           return Observable.throw(error);
         }

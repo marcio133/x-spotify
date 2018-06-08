@@ -181,3 +181,34 @@ a {
     animation-delay: 0.5s;
     // -webkit-animation-iteration-count: infinite;
 }
+
+#login-page {
+    height: 100vh;
+    max-height: 100vh;
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    resize: vertical;
+    // background-color: white;
+    margin: 10%;
+    width: 80%;
+    height: 80vh;
+    padding: 13%;
+    color: #fff;
+    p {
+        color: #fff;
+    }
+    button {
+        i {
+            color: #fff;
+        }
+    }
+}
