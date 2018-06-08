@@ -14,14 +14,27 @@ export class ArtistModalComponent implements OnInit {
   constructor(public bsModalRef: BsModalRef, private artistService: ArtistService) { }
 
   ngOnInit() {
+    console.log(this.artist);
+    
     this.artistService.getAlbums(this.artist.id).subscribe((res:any)=>{
       res.items = _.uniqBy(res.items, 'name');
       this.albums = res.items.slice(0, 5);
-
       console.log(res);
     },error=>{
       this.bsModalRef.hide();
     })
+  }
+
+  artistPopularity() {
+    if (this.artist.popularity>80) {
+      return 'Hot';
+    } else if(this.artist.popularity>60 && this.artist.popularity<79){
+      return 'Cool';
+    }else if(this.artist.popularity>30 && this.artist.popularity<59){
+      return 'Regular';
+    }else{
+      return 'Underground';
+    }
   }
 
 }

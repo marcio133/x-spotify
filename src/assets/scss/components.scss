@@ -127,6 +127,16 @@ a {
     border-radius: 0px;
 }
 
+.artist-img {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: top center;
+    border-radius: 50%;
+}
+
 .loader {
     line-height: 36px;
     span {
@@ -145,4 +155,21 @@ a {
 
 .detail {
     color: $text-gray;
+    span {
+        color: $text-gray;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-duration: 1.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-duration: 1.5s;
+    -o-animation-delay: 0.5s;
+    -ms-animation-duration: 1.5s;
+    -ms-animation-delay: 0.5s;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+    // -webkit-animation-iteration-count: infinite;
 }
