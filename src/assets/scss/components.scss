@@ -103,8 +103,10 @@ a {
 
 .modal-dialog {
     max-width: 80%;
-    margin: auto;
-    margin-top: 10%;
+    margin: 10% auto;
+    @media (min-width: 1370px) {
+        margin: 5% auto;
+    }
 }
 
 .close {
