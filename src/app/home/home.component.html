@@ -17,18 +17,18 @@
             </div>
         </div>
         <div class="row" *ngIf="type == 'album' || type == 'newAlbums'">
-            <div class="col-md-2 col-sm-3 col-6 animated fadeInUp" *ngFor="let album of results">
+            <div class="col-md-2 col-sm-3 col-6" data-aos-duration="1500" data-aos="fade-up" *ngFor="let album of results">
                 <app-album [album]="album"></app-album>
             </div>
         </div>
 
         <div class="row" *ngIf="type == 'artist'">
-            <div class="col-md-2 col-sm-3 col-6 animated fadeInUp" *ngFor="let artist of results">
+            <div class="col-md-2 col-sm-3 col-6" data-aos-duration="1500" data-aos="fade-up" *ngFor="let artist of results">
                 <app-artist [artist]="artist"></app-artist>
             </div>
         </div>
         <div class="row" *ngIf="type == 'track'">
-            <div class="col-md-2 col-sm-3 col-6 animated fadeInUp" *ngFor="let track of results">
+            <div class="col-md-2 col-sm-3 col-6" data-aos-duration="1500" data-aos="fade-up" *ngFor="let track of results">
                 <app-tracks [track]="track"></app-tracks>
             </div>
         </div>

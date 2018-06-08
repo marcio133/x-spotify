@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { UserService } from '../_services/user.service';
 import * as _ from 'lodash';
+import { AosToken } from '../aos';  
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,10 @@ export class HomeComponent implements OnInit {
   results: any;
   type: string = null;
   loading: boolean = false;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, @Inject(AosToken) aos) {
+    aos.init();
+
+   }
 
   ngOnInit() {
     this.userService.loadUser();

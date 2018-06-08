@@ -26,6 +26,7 @@ import { ArtistService } from './_services/artist.service';
 import { AlbumModalComponent } from './album-modal/album-modal.component';
 import { AlbumService } from './_services/album.service';
 import { LoadingComponent } from './loading/loading.component';
+import { AosToken, aos } from './aos';
 
 
 @NgModule({
@@ -59,6 +60,8 @@ import { LoadingComponent } from './loading/loading.component';
         useClass: AuthService,
         multi: true
     },
+    //register AOS with DI
+    { provide: AosToken, useValue: aos },
     TokenService,
     SearchService,
     UserService,
