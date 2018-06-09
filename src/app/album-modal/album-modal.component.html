@@ -12,10 +12,19 @@
         </div>
         <div class="col-md-8">
             <h5>{{album.name}}</h5>
-            <p class="detail" *ngIf="album.artists.length == 1;else variousArtists">{{album.artists[0].name}}</p>
+            <!-- <div class="row"> -->
+            <!-- <div class="col-md-4"> -->
+            <p class="detail" *ngIf="album.artists.length == 1;else variousArtists">{{album.artists[0].name}} <button class="btn" [ngClass]="isSaved?'saved-button-true':'saved-button'" (click)="saveAlbum();" type="button">{{isSaved? 'Saved' : 'Save'}}</button>
+            </p>
             <ng-template #variousArtists>
-                <p>Various artists</p>
+                <p>Various artists <button class="btn" [ngClass]="isSaved?'saved-button-true':'saved-button'" (click)="saveAlbum();" type="button">{{isSaved? 'Saved' : 'Save'}}</button>
+                </p>
             </ng-template>
+            <!-- </div> -->
+            <!-- <div class="col-md-8"> -->
+            <!-- </div> -->
+            <!-- </div> -->
+
             <div class="table-responsive">
                 <table class="table  table-striped">
                     <tr>

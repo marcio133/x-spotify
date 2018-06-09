@@ -18,4 +18,18 @@ export class AlbumService {
     return this.httpClient.get(`${this.baseUrl}v1/browse/new-releases`, { params: params });
   }
 
+  verifyIsSaved(albumId) {
+    let params = new HttpParams().set('ids', albumId)
+    return this.httpClient.get(`${this.baseUrl}v1/me/albums/contains`, { params: params });
+  }
+
+  save(data) {
+    return this.httpClient.put(`${this.baseUrl}v1/me/albums/`, data);
+  }
+
+  delete(albumId) {
+    let params = new HttpParams().set('ids', albumId)
+    return this.httpClient.delete(`${this.baseUrl}v1/me/albums/`, { params: params });
+  }
+
 }
