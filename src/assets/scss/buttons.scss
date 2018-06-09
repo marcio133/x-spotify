@@ -1,0 +1,16 @@
+.btn-success {
+    background-color: $spotify-green;
+    box-shadow: none;
+    &:hover {
+        background-color: $spotify-green-hover;
+        box-shadow: none;
+    }
+    &:focus {
+        box-shadow: none;
+        background-color: $spotify-green-hover;
+    }
+    &:active {
+        box-shadow: none !important;
+        background-color: $spotify-green-hover !important;
+    }
+}
