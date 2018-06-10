@@ -1,0 +1,69 @@
+.btn {
+    &:focus {
+        box-shadow: none;
+    }
+    &::active {
+        box-shadow: none;
+    }
+}
+
+.btn-success {
+    background-color: $spotify-green;
+    box-shadow: none;
+    &:hover {
+        background-color: $spotify-green-hover;
+        box-shadow: none;
+    }
+    &:focus {
+        box-shadow: none;
+        background-color: $spotify-green-hover;
+    }
+    &:active {
+        box-shadow: none !important;
+        background-color: $spotify-green-hover !important;
+    }
+}
+
+.saved-button {
+    border: 2px solid $primary-color;
+    border-radius: 0;
+    color: $primary-color;
+    background-color: #fff;
+    padding: 6px 40px;
+    margin-left: 25px;
+    // &:hover {
+    //     background-color: $primary-color;
+    //     color: #fff;
+    // }
+    // &:focus {
+    //     background-color: $primary-color;
+    //     color: #fff;
+    // }
+    // &::active {
+    //     border: none;
+    //     background-color: $primary-color;
+    //     color: #fff;
+    // }
+}
+
+.saved-button-true {
+    border: 2px solid $primary-color;
+    border-radius: 0;
+    color: #fff;
+    background-color: $primary-color;
+    padding: 6px 40px;
+    margin-left: 25px;
+    // &:hover {
+    //     background-color: #fff;
+    //     color: $primary-color;
+    // }
+    // &:focus {
+    //     background-color: #fff;
+    //     color: $primary-color;
+    // }
+    // &::active {
+    //     border: none;
+    //     background-color: #fff;
+    //     color: $primary-color;
+    // }
+}

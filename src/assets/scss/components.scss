@@ -1,0 +1,219 @@
+.navbar {
+    background-color: $primary-color;
+    color: #fff;
+    a {
+        color: #fff;
+    }
+}
+
+.user-menu {
+    padding: 10px;
+    .user-image {
+        float: left;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        margin-right: 10px;
+        margin-top: -2px;
+    }
+    span {
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: darken( $primary-color, 25%)
+    }
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+#search-form {
+    padding: 45px 15px;
+    margin-bottom: 40px;
+    background: $primary-color;
+}
+
+.card {
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 15px;
+    .card-img {
+        width: 100%;
+        padding-top: 100%;
+        background-size: cover;
+        /* <------ */
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-radius: 0px;
+    }
+    .card-img-default {
+        @extend .card-img;
+        background-image: url('assets/disc.png');
+    }
+    .card-body {
+        text-align: center;
+        padding: 5px;
+        .card-title {
+            font-family: 'Work Sans bold', sans-serif;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        p {
+            font-size: 11px;
+            color: $text-gray;
+        }
+        .artist-description {
+            min-height: 85px;
+            max-height: 85px;
+            overflow: hidden;
+        }
+    }
+}
+
+.badge-primary {
+    background-color: $primary-color;
+    i {
+        color: $hot-color;
+    }
+}
+
+.modal-content {
+    border-radius: 0px;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 0 16px;
+    .modal-title {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.modal-body {
+    padding-bottom: 40px;
+}
+
+.modal-footer {
+    border-top: none
+}
+
+.modal-dialog {
+    max-width: 80%;
+    margin: 10% auto;
+    @media (min-width: 1370px) {
+        margin: 5% auto;
+    }
+}
+
+.close {
+    opacity: 1;
+}
+
+.close-modal {
+    color: $primary-color !important;
+    // opacity: 1;
+    &:hover {
+        color: $secondary-color !important;
+    }
+}
+
+.album-img {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 0px;
+}
+
+.artist-img {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: top center;
+    border-radius: 50%;
+}
+
+.loader {
+    line-height: 36px;
+    span {
+        margin-top: -10px;
+    }
+}
+
+.navbar-expand-lg {
+    .navbar-collapse {
+        display: -ms-flexbox!important;
+        display: flex!important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    }
+}
+
+.detail {
+    line-height: 36px;
+    color: $text-gray;
+    span {
+        color: $text-gray;
+    }
+}
+
+.user-menu span {
+    color: #fff;
+}
+
+.fadeInUp {
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-duration: 1.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-duration: 1.5s;
+    -o-animation-delay: 0.5s;
+    -ms-animation-duration: 1.5s;
+    -ms-animation-delay: 0.5s;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+    // -webkit-animation-iteration-count: infinite;
+}
+
+#login-page {
+    height: 100vh;
+    max-height: 100vh;
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    resize: vertical;
+    // background-color: white;
+    margin: 10%;
+    width: 80%;
+    height: 80vh;
+    padding: 13%;
+    color: #fff;
+    p {
+        color: #fff;
+    }
+    button {
+        i {
+            color: #fff;
+        }
+    }
+}

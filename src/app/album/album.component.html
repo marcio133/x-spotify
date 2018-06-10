@@ -1,0 +1,16 @@
+<div class="card" (click)="openAlbumModal()">
+    <div class="card-img" *ngIf="album.images.length" [ngStyle]="{'background-image': 'url(' + album.images[0].url + ')'}"></div>
+    <div class="card-img-default" *ngIf="!album.images.length"></div>
+
+    <!-- <img class="card-img-top" src="{{album.images[0].url}}" alt="Card image cap"> -->
+    <div class="card-body">
+        <h5 class="card-title">{{album.name}}</h5>
+        <p *ngIf="album.artists.length == 1;else variousArtists">{{album.artists[0].name}}</p>
+        <ng-template #variousArtists>
+            <p>Various artists</p>
+        </ng-template>
+
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <!-- <a href="{{album.external_urls.spotify}}" class="btn btn-primary btn-sm">See More</a> -->
+    </div>
+</div>

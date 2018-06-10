@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/assets/Work_Sans/WorkSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Work Sans bold';
+    src: url('/assets/Work_Sans/WorkSans-Bold.ttf');
+}
+
+// @font-face {
+//     font-family: 'Open-sans-bold';
+//     src: url('Open_Sans/OpenSans-Bold.ttf');
+// }
+// @font-face {
+//     font-family: 'Open-sans-semi-bold';
+//     src: url('Open_Sans/OpenSans-SemiBold.ttf');
+// }
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Work Sans bold', sans-serif;
+}
+
+h6 {
+    font-family: 'Work Sans bold', sans-serif;
+    border-bottom: 2px solid $primary-color;
+    padding-top: 3rem;
+}

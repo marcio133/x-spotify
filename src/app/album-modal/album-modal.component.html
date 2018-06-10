@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <!-- <h4 class="modal-title"></h4> -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span class="close-modal" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="album-img" [ngStyle]="{'background-image': 'url(' + album.images[0].url + ')'}"></div>
+
+        </div>
+        <div class="col-md-8">
+            <h5>{{album.name}}</h5>
+            <!-- <div class="row"> -->
+            <!-- <div class="col-md-4"> -->
+            <p class="detail" *ngIf="album.artists.length == 1;else variousArtists">{{album.artists[0].name}} <button class="btn" [ngClass]="isSaved?'saved-button-true':'saved-button'" (click)="saveAlbum();" type="button">{{isSaved? 'Saved' : 'Save'}}</button>
+            </p>
+            <ng-template #variousArtists>
+                <p>Various artists <button class="btn" [ngClass]="isSaved?'saved-button-true':'saved-button'" (click)="saveAlbum();" type="button">{{isSaved? 'Saved' : 'Save'}}</button>
+                </p>
+            </ng-template>
+            <!-- </div> -->
+            <!-- <div class="col-md-8"> -->
+            <!-- </div> -->
+            <!-- </div> -->
+
+            <div class="table-responsive">
+                <table class="table  table-striped">
+                    <tr>
+                        <th colspan="2">MÚSICA</th>
+                        <th>DURAÇÃO</th>
+                    </tr>
+                    <tr *ngFor="let track of tracks">
+                        <td class="small-colum">{{track.track_number}}</td>
+                        <td>{{track.name}} <span *ngIf="track.explicit" class="badge badge-primary">Explicit</span>
+                        </td>
+                        <td>{{track.duration_ms|date:'mm:ss'}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close</button>
+</div> -->

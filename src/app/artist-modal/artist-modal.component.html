@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <!-- <h4 class="modal-title">{{artist.name}}</h4> -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span class="close-modal" aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="artist-img" [ngStyle]="{'background-image': 'url(' + artist.images[0].url + ')'}"></div>
+        </div>
+        <div class="col-md-10">
+            <h5>{{artist.name}}</h5>
+            <p class="detail"><span *ngFor="let genre of artist.genres; let i = index">{{genre}}{{i==(artist.genres.length-1)?'':','}}</span></p>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <span *ngIf="artistPopularity() != 'Hot';else hotArtist" class="badge badge-secondary">{{artistPopularity()}}</span>
+                    <ng-template #hotArtist>
+                        <span class="badge badge-primary"> <i class="fa fa-star" aria-hidden="true"></i> Hot</span>
+                    </ng-template>
+                </div>
+                <div class="col-md-9">
+                    {{artist.followers.total}} Followers <span><button class="btn" [ngClass]="isSaved?'saved-button-true':'saved-button'" (click)="saveArtist();" type="button">{{isSaved? 'Saved' : 'Save'}}</button></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <h6>Latest 5 albums</h6>
+    <div class="row">
+        <!-- <div class="col-md-2"></div> -->
+        <div class="col" *ngFor="let album of albums">
+            <app-album [album]="album"></app-album>
+        </div>
+    </div>
+</div>
+<!-- <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close</button>
+</div> -->
