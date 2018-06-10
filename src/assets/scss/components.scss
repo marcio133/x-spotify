@@ -38,6 +38,9 @@ a {
     padding: 45px 15px;
     margin-bottom: 40px;
     background: $primary-color;
+    @media (max-width: 380px) {
+        padding: 15px 15px;
+    }
 }
 
 .card {
@@ -208,6 +211,9 @@ a {
     height: 80vh;
     padding: 13%;
     color: #fff;
+    @media (max-width: 380px) {
+        padding: 13% 0;
+    }
     p {
         color: #fff;
     }
