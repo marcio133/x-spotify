@@ -26,7 +26,6 @@ export class SearchComponent implements OnInit {
     }else{
       this.loading.emit(true);
       this.searchService.search(this.searchString, this.type).subscribe((res:any) => {
-        console.log(res);
         this.result.emit({results: res[`${this.type}s`].items, type: this.type});
         this.loading.emit(false);
       }, error=>{
@@ -38,7 +37,6 @@ export class SearchComponent implements OnInit {
   getNewReleases() {
     this.loading.emit(true);
     this.albumService.getNewReleases().subscribe(res=>{
-      console.log(res);
       this.result.emit({results: res['albums'].items, type: 'newAlbums'});
       this.loading.emit(false);
     }, error=>{

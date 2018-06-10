@@ -20,7 +20,6 @@ export class ArtistModalComponent implements OnInit {
     this.artistService.getAlbums(this.artist.id).subscribe((res:any)=>{
       res.items = _.uniqBy(res.items, 'name');
       this.albums = res.items.slice(0, 5);
-      console.log(res);
     },error=>{
       this.bsModalRef.hide();
     })
@@ -29,7 +28,6 @@ export class ArtistModalComponent implements OnInit {
   verifyArtistSaved() {
     this.artistService.verifySaved(this.artist.id).subscribe(res=>{
       this.isSaved = res[0] || false;
-      console.log(this.isSaved, `saved`);
     }) 
   }
 
