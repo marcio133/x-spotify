@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   getResults(results) {
     this.results = results.results;
     this.type = results.type;
-    console.log( this.results);
+    // console.log( this.results);
   }
 
   setLoading(value: boolean) {

@@ -17,7 +17,6 @@ export class AlbumModalComponent implements OnInit {
   ngOnInit() {
     this.verifyAlbumSaved();
     this.albumService.getAlbumTracks(this.album.id).subscribe((res:any)=>{
-      console.log(res);
       this.tracks = res.items;
     })
   }
@@ -25,7 +24,6 @@ export class AlbumModalComponent implements OnInit {
   verifyAlbumSaved() {
     this.albumService.verifyIsSaved(this.album.id).subscribe(res=>{
       this.isSaved = res[0] || false;
-      console.log(this.isSaved, `saved`);
     }) 
   }
 
