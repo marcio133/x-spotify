@@ -1,5 +1,7 @@
 <div class="card" (click)="openAlbumModal()">
-    <div class="card-img" [ngStyle]="{'background-image': 'url(' + album.images[0].url + ')'}"></div>
+    <div class="card-img" *ngIf="album.images.length" [ngStyle]="{'background-image': 'url(' + album.images[0].url + ')'}"></div>
+    <div class="card-img-default" *ngIf="!album.images.length"></div>
+
     <!-- <img class="card-img-top" src="{{album.images[0].url}}" alt="Card image cap"> -->
     <div class="card-body">
         <h5 class="card-title">{{album.name}}</h5>

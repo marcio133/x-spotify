@@ -53,6 +53,10 @@ a {
         background-position: center center;
         border-radius: 0px;
     }
+    .card-img-default {
+        @extend .card-img;
+        background-image: url('assets/disc.png');
+    }
     .card-body {
         text-align: center;
         padding: 5px;

@@ -1,5 +1,6 @@
 <div class="card">
-    <img class="card-img-top" src="{{track.album.images[0].url}}" alt="Card image cap">
+    <div class="card-img" *ngIf="track.album.images.length" [ngStyle]="{'background-image': 'url(' + track.album.images[0].url + ')'}"></div>
+    <div class="card-img-default" *ngIf="!track.album.images.length"></div>
     <div class="card-body text-center">
         <h5 class="card-title">{{track.name}}</h5>
         <p><span *ngFor="let artist of track.artists">{{artist.name}}</span></p>

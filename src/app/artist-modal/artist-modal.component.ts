@@ -11,11 +11,12 @@ import * as _ from 'lodash';
 export class ArtistModalComponent implements OnInit {
   albums: any;
   artist: any;
+  isSaved: boolean;
   constructor(public bsModalRef: BsModalRef, private artistService: ArtistService) { }
 
   ngOnInit() {
     console.log(this.artist);
-    
+    this.verifyArtistSaved();
     this.artistService.getAlbums(this.artist.id).subscribe((res:any)=>{
       res.items = _.uniqBy(res.items, 'name');
       this.albums = res.items.slice(0, 5);
@@ -23,6 +24,26 @@ export class ArtistModalComponent implements OnInit {
     },error=>{
       this.bsModalRef.hide();
     })
+  }
+
+  verifyArtistSaved() {
+    this.artistService.verifySaved(this.artist.id).subscribe(res=>{
+      this.isSaved = res[0] || false;
+      console.log(this.isSaved, `saved`);
+    }) 
+  }
+
+  saveArtist(){
+    if (this.isSaved) {
+      this.isSaved = !this.isSaved;
+      this.artistService.unfollow(this.artist.id).subscribe(res=>{
+        // console.log(res);
+      })
+    } else{      
+      this.isSaved = !this.isSaved;
+      this.artistService.saveArtist(this.artist.id).subscribe(res=>{
+      })
+    }
   }
 
   artistPopularity() {

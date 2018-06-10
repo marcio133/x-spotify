@@ -21,7 +21,7 @@
                     </ng-template>
                 </div>
                 <div class="col-md-9">
-                    {{artist.followers.total}} Followers
+                    {{artist.followers.total}} Followers <span><button class="btn" [ngClass]="isSaved?'saved-button-true':'saved-button'" (click)="saveArtist();" type="button">{{isSaved? 'Saved' : 'Save'}}</button></span>
                 </div>
             </div>
         </div>
