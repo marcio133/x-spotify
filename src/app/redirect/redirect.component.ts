@@ -20,6 +20,8 @@ export class RedirectComponent implements OnInit {
   private tokenService: TokenService) { }
 
   ngOnInit() {
+    console.log(window.location.href);
+    
     this.route.fragment.subscribe((fragment: string) => {
       // console.log("My hash fragment is here => ", fragment)
       fragment = fragment.slice(0, -44)

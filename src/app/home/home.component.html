@@ -20,16 +20,25 @@
             <div class="col-md-2 col-sm-3 col-6" data-aos-duration="1500" data-aos="fade-up" data-aos-offset="80" *ngFor="let album of results">
                 <app-album [album]="album"></app-album>
             </div>
+            <div class="col  text-center" *ngIf="!results.length">
+                No Results
+            </div>
         </div>
 
         <div class="row" *ngIf="type == 'artist'">
             <div class="col-md-2 col-sm-3 col-6" data-aos-duration="1500" data-aos="fade-up" data-aos-offset="80" *ngFor="let artist of results">
                 <app-artist [artist]="artist"></app-artist>
             </div>
+            <div class="col  text-center" *ngIf="!results.length">
+                No Results
+            </div>
         </div>
         <div class="row" *ngIf="type == 'track'">
             <div class="col-md-2 col-sm-3 col-6" data-aos-duration="1500" data-aos="fade-up" data-aos-offset="80" *ngFor="let track of results">
                 <app-tracks [track]="track"></app-tracks>
+            </div>
+            <div class="col  text-center" *ngIf="!results.length">
+                No Results
             </div>
         </div>
     </section>
