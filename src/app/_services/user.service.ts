@@ -16,7 +16,6 @@ export class UserService {
   loadUser() {
     this.verifyUser().toPromise().then(response => {
       this.setUser(response);
-      console.log(response);
     }).catch( err => {
       this.setUser(null);
     });
