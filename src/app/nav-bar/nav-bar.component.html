@@ -8,7 +8,11 @@
         <ul class="navbar-nav ml-auto">
             <li class="dropdown user user-menu" *ngIf="user">
                 <a href="{{user.external_urls.spotify}}">
-                    <img src="{{user.images[0].url}}" class="user-image" alt="User Image">
+                    <img *ngIf="user.images.length;else default_user" src="{{user.images[0].url}}" class="user-image" alt="User Image">
+                    <ng-template #default_user>
+                        <img src="assets/user.png" class="user-image" alt="User Image">
+                    </ng-template>
+
                     <span class="hidden-xs">{{user.display_name}}</span>
                 </a>
             </li>
